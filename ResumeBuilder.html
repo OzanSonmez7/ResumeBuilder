@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Cache Control  -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- end Cache Control  -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Creation Tool</title>
+    <script>
+        function SelectSchoolCount() {
+            if (document.getElementById('schoolCount').value == "school1"){
+                document.getElementById('schoolLabel1').hidden = false;
+                document.getElementById('school1').hidden = false;
+                document.getElementById('schoolDescription1').hidden = false;
+                document.getElementById('resumeSchoolLi1').hidden = false;
+
+            }
+            else if (document.getElementById('schoolCount').value == "school2"){
+                for (let i = 1; i <=2 ; i++) {
+                document.getElementById(`schoolLabel${i}`).hidden = false;
+                document.getElementById(`school${i}`).hidden = false;
+                document.getElementById(`schoolDescription${i}`).hidden = false;
+                document.getElementById(`resumeSchoolLi${i}`).hidden = false;
+                    
+                }
+            } 
+            else if (document.getElementById('schoolCount').value == "school3"){
+                for (let i = 1; i <=3 ; i++) {
+                document.getElementById(`schoolLabel${i}`).hidden = false;
+                document.getElementById(`school${i}`).hidden = false;
+                document.getElementById(`schoolDescription${i}`).hidden = false;
+                document.getElementById(`resumeSchoolLi${i}`).hidden = false;
+                    
+                }
+            }
+            else{
+                for (let i = 1; i <=3 ; i++) {
+                document.getElementById(`schoolLabel${i}`).hidden = true;
+                document.getElementById(`school${i}`).hidden = true;
+                document.getElementById(`schoolDescription${i}`).hidden = true;
+                document.getElementById(`resumeSchoolLi${i}`).hidden = true;
+                    
+                }
+            }
+        }
+        function SelectSkillCount() {
+            if (document.getElementById('skillCount').value == "skill1"){
+                document.getElementById('skillLabel1').hidden = false;
+                document.getElementById('skill1').hidden = false;
+                document.getElementById('skillDescription1').hidden = false;
+                document.getElementById('resumeSkillLi1').hidden = false;
+            }
+            else if (document.getElementById('skillCount').value == "skill2"){
+                for (let i = 1; i <=2 ; i++) {
+                document.getElementById(`skillLabel${i}`).hidden = false;
+                document.getElementById(`skill${i}`).hidden = false;
+                document.getElementById(`skillDescription${i}`).hidden = false;
+                document.getElementById(`resumeSkillLi${i}`).hidden = false;
+                    
+                }
+            } 
+            else if (document.getElementById('skillCount').value == "skill3"){
+                for (let i = 1; i <=3 ; i++) {
+                document.getElementById(`skillLabel${i}`).hidden = false;
+                document.getElementById(`skill${i}`).hidden = false;
+                document.getElementById(`skillDescription${i}`).hidden = false;
+                document.getElementById(`resumeSkillLi${i}`).hidden = false;  
+                }
+            }
+            else{
+                for (let i = 1; i <=3 ; i++) {
+                document.getElementById(`skillLabel${i}`).hidden = true;
+                document.getElementById(`skill${i}`).hidden = true;
+                document.getElementById(`skillDescription${i}`).hidden = true;
+                document.getElementById(`resumeSkillLi${i}`).hidden = false;  
+                }
+            }
+        }
+
+        function FillText() {
+            // Name Box
+            document.getElementById('nameBoxName').innerText = document.getElementById('nameInput').value;
+            document.getElementById('nameBoxTitle').innerText = document.getElementById('titleInput').value;
+
+            // Contact
+            document.getElementById('phone').innerText = document.getElementById('phoneInput').value;
+            document.getElementById('email').innerText = document.getElementById('emailInput').value;
+            document.getElementById('address').innerText = document.getElementById('addressInput').value;
+            document.getElementById('website').innerText = document.getElementById('websiteInput').value;
+
+            // Education
+            document.getElementById('educationText').innerText = document.getElementById('educationDescription').value;
+            document.getElementById('resumeSchool1').innerText = document.getElementById('school1').value;
+            document.getElementById('resumeSchoolDescription1').innerText = document.getElementById('schoolDescription1').value;
+            document.getElementById('resumeSchool2').innerText = document.getElementById('school2').value;
+            document.getElementById('resumeSchoolDescription2').innerText = document.getElementById('schoolDescription2').value;
+            document.getElementById('resumeSchool3').innerText = document.getElementById('school3').value;
+            document.getElementById('resumeSchoolDescription3').innerText = document.getElementById('schoolDescription3').value;
+
+            // Skills
+            document.getElementById('skillText').innerText = document.getElementById('skillDescription').value;
+            document.getElementById('resumeSkill1').innerText = document.getElementById('skill1').value;
+            document.getElementById('resumeSkillDescription1').innerText = document.getElementById('skillDescription1').value;
+            document.getElementById('resumeSkill2').innerText = document.getElementById('skill2').value;
+            document.getElementById('resumeSkillDescription2').innerText = document.getElementById('skillDescription2').value;
+            document.getElementById('resumeSkill3').innerText = document.getElementById('skill3').value;
+            document.getElementById('resumeSkillDescription3').innerText = document.getElementById('skillDescription3').value;
+
+            // About Me
+            document.getElementById('resumeAboutMe').innerText = document.getElementById('aboutMeDescription').value;
+
+            // Work Experience
+            document.getElementById('resumeExperience').innerText = document.getElementById('experienceDescription').value;
+        }
+
+        function FillAppearance() {
+            // Background color
+            document.getElementById('resume').style.backgroundColor = document.getElementById('backgroundColor').value;
+
+            // Left column color
+            document.getElementById('leftColumn').style.backgroundColor = document.getElementById('leftColumnColor').value;
+            // Name box color
+            document.getElementById('nameBox').style.backgroundColor = document.getElementById('nameBoxColor').value;
+            document.getElementById('nameBoxName').style.color = document.getElementById('nameBoxTextColor').value;
+            document.getElementById('nameBoxTitle').style.color = document.getElementById('nameBoxTextColor').value;
+            document.getElementById('line').style.borderBlockColor = document.getElementById('nameBoxTextColor').value;
+            
+            // Font
+            if(document.getElementById('font').value == "font1"){
+                document.getElementById('resume').style.fontFamily = "Times New Roman";
+            }
+            else if (document.getElementById('font').value == "font2"){
+                document.getElementById('resume').style.fontFamily = "Courier New";
+            }
+            else if (document.getElementById('font').value == "font3"){
+                document.getElementById('resume').style.fontFamily = "Lucida Console";
+            }
+
+            // Photo frame
+            if (document.getElementById('photoShape').value == "photoShape1"){
+                document.getElementById('photo').style.borderRadius = "0px";
+            }
+            else if (document.getElementById('photoShape').value == "photoShape2"){
+                document.getElementById('photo').style.borderRadius = "50px";
+            }
+            else if (document.getElementById('photoShape').value == "photoShape3"){
+                document.getElementById('photo').style.borderRadius = "100px";
+            }
+
+            // Line under the title
+            document.getElementById('contactTitle').style.borderBottomColor = document.getElementById('lineColor').value;
+            document.getElementById('educationTitle').style.borderBottomColor = document.getElementById('lineColor').value;
+            document.getElementById('skillsTitle').style.borderBottomColor = document.getElementById('lineColor').value;
+            document.getElementById('aboutMeTitle').style.borderBottomColor = document.getElementById('lineColor').value;
+            document.getElementById('experienceTitle').style.borderBottomColor = document.getElementById('lineColor').value;
+
+            if (document.getElementById('lineStyle').value == "lineStyle1"){
+                document.getElementById('contactTitle').style.borderBottomStyle = "dotted";
+                document.getElementById('educationTitle').style.borderBottomStyle = "dotted";
+                document.getElementById('skillsTitle').style.borderBottomStyle = "dotted";
+                document.getElementById('aboutMeTitle').style.borderBottomStyle = "dotted";
+                document.getElementById('experienceTitle').style.borderBottomStyle = "dotted";
+            }
+            else if (document.getElementById('lineStyle').value == "lineStyle2"){
+                document.getElementById('contactTitle').style.borderBottomStyle = "dashed";
+                document.getElementById('educationTitle').style.borderBottomStyle = "dashed";
+                document.getElementById('skillsTitle').style.borderBottomStyle = "dashed";
+                document.getElementById('aboutMeTitle').style.borderBottomStyle = "dashed";
+                document.getElementById('experienceTitle').style.borderBottomStyle = "dashed";
+            }
+            else if (document.getElementById('lineStyle').value == "lineStyle3"){
+                document.getElementById('contactTitle').style.borderBottomStyle = "solid";
+                document.getElementById('educationTitle').style.borderBottomStyle = "solid";
+                document.getElementById('skillsTitle').style.borderBottomStyle = "solid";
+                document.getElementById('aboutMeTitle').style.borderBottomStyle = "solid";
+                document.getElementById('experienceTitle').style.borderBottomStyle = "solid";
+            }
+        }
+        
+    </script>
+    
+
+    <style>
+        .page{
+            display: flex;
+            border-radius: 50px;
+        }
+        .resume {
+            border-radius: 0 50px 50px 0;
+            width: 900px;
+            height: 1200px;
+            display: flex;
+        }
+
+        .leftColumn {
+            width: 300px;
+            height: 100%;
+            background-color: rgb(173, 26, 26);
+            margin-left: 30px;
+        }
+
+        .rightColumn { 
+            width: 600px;
+            height: 100%;
+        }
+
+        .leftColumn .box {
+            width: 275px;
+            height: 250px;
+            margin: 10px;
+            margin-top: 100px;
+        }
+        .rightColumn .box {
+            width: 500px;
+            height: 400px;
+            margin: 10px;
+            margin-top: 35px;
+        }
+        .rightColumn .title{
+            
+            margin-top: 35px;
+        }
+
+        .box .title {
+            font-size: 25px;
+            border-bottom: black 3px solid;
+            margin-bottom: 10px;
+        }
+        .nameBox {
+            border-radius: 0 50px 0px 0;
+            width: 100%;
+            background-color: #383838;
+            height: 200px;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+            .nameBox .name {
+                font-size: 50px;
+            }
+
+            .nameBox .title {
+                font-size: 30px;
+            }
+
+            .nameBox .line {
+                border-bottom: white 3px solid;
+                width: 100px;
+                margin: auto;
+            }
+
+
+        .photo {
+            border: black 2px solid;
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            margin: 30px 50px 50px 50px;
+
+        }
+        .photo .photoText{
+            text-align: center; 
+            padding: 85px 0px 0px 0px;         
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="tool" style=" margin-bottom: 1px; width: 1800px; height: 80px; border: black 1px solid; text-align: center; border-radius: 50px; background-color: rgb(142, 231, 247); ">
+        <h1>Resume Creation Tool</h1>
+    </div>
+   <div class="page" style="width: 1800px; height: 1492px;">
+        <div class="text" style=" padding: 5px; width: 520px; height: 1480px; background-color: rgb(175, 175, 175); border: black 1px solid; border-radius: 50px 0 0 50px;">
+            <h2 style="text-align: center;">Text Contents</h2>
+            <hr>
+            <table>
+                <tr>
+                    <td style="text-decoration: underline;"><br> <b>Name Box</b><br><br></td>
+                </tr>
+                <tr>
+                    <td><label for="nameInput">Full Name : </label></td>
+                    <td><input type="text" id="nameInput" onkeyup="FillText()"></td>
+                </tr>
+                <tr>
+                    <td><label for="titleInput">Title : </label></td>
+                    <td><input type="text" id="titleInput" onkeyup="FillText()"></td>
+                </tr>
+                <tr>
+                    <td style="text-decoration: underline;"><br> <b>Contact Information</b>  <br><br></td>
+                </tr>
+                <tr>
+                    <td><label for="phoneInput">Phone : </label></td>
+                    <td><input type="text" id="phoneInput" onkeyup="FillText()"></td>
+                </tr>
+                <tr>
+                    <td><label for="emailInput">Email : </label></td>
+                    <td><input type="text" id="emailInput" onkeyup="FillText()"></td>
+                </tr>
+                <tr>
+                    <td><label for="websiteInput">Website : </label></td>
+                    <td><input type="text" id="websiteInput" onkeyup="FillText()"></td>
+                </tr>
+                <tr>
+                    <td><label for="addressInput">Address : </label></td>
+                    <td><textarea name="" onkeyup="FillText()" id="addressInput" cols="20" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td style="text-decoration: underline;"><br> <b>Education Information</b><br><br></td>
+                </tr>
+                <tr>
+                    <td>Description : </td>
+                    <td><textarea  onkeyup="FillText()" id="educationDescription" cols="20" rows="5"></textarea></td>
+                </tr>
+                <tr> 
+                    <td><label for="schoolCount">Number of Schools : </label></td>
+                    <td> 
+                        <select name="schoolCount" id="schoolCount" onchange="SelectSchoolCount()">
+                            <option value="select">Select</option>
+                            <option value="school1">1</option>
+                            <option value="school2">2</option>
+                            <option value="school3">3</option>
+                        </select>                                            
+                     </td>
+                </tr>
+
+                <tr>
+                    <td><label for="school1" id="schoolLabel1" hidden>1st School</label></td>
+                    <td><input type="text" id="school1" onkeyup="FillText()"  hidden> </td>  
+                    <td><input type="text" id="schoolDescription1" onkeyup="FillText()"  placeholder="Description" hidden></td>                 
+                </tr>
+                <tr>
+                    <td><label for="school2" id="schoolLabel2" hidden>2nd School</label></td>
+                    <td><input type="text" id="school2" onkeyup="FillText()"  hidden> </td>
+                    <td><input type="text" id="schoolDescription2" onkeyup="FillText()"  placeholder="Description" hidden></td>  
+                </tr>
+                <tr>
+                    <td><label for="school3" id="schoolLabel3" hidden>3rd School</label></td>
+                    <td><input type="text" id="school3" onkeyup="FillText()"  hidden> </td>
+                    <td><input type="text" id="schoolDescription3" onkeyup="FillText()"  placeholder="Description" hidden></td>  
+                </tr>  
+                <tr>
+                    <td style="text-decoration: underline;"><br> <b>Skills</b><br><br></td>
+                </tr>          
+                <tr>
+                    <td>Description : </td>
+                    <td><textarea onblur="FillText()"   id="skillDescription" cols="20" rows="5"></textarea></td>
+                </tr>  
+                <tr> 
+                    <td><label for="skillCount">Number of Skills : </label></td>
+                    <td> 
+                        <select name="skillCount" id="skillCount" onchange="SelectSkillCount()">
+                            <option value="select">Select</option>
+                            <option value="skill1">1</option>
+                            <option value="skill2">2</option>
+                            <option value="skill3">3</option>
+                        </select>                                           
+                     </td>
+                </tr>
+                <tr>
+                    <td><label for="skill1" id="skillLabel1" hidden>1st Skill</label></td>
+                    <td><input type="text" id="skill1" onkeyup="FillText()"  hidden> </td>  
+                    <td><input type="text" id="skillDescription1" onkeyup="FillText()"  placeholder="Description" hidden></td>                 
+                </tr>
+                <tr>
+                    <td><label for="skill2" id="skillLabel2" hidden>2nd Skill</label></td>
+                    <td><input type="text" id="skill2" onkeyup="FillText()"  hidden> </td>
+                    <td><input type="text" id="skillDescription2" onkeyup="FillText()"  placeholder="Description" hidden></td>  
+                </tr>
+                <tr>
+                    <td><label for="skill3" id="skillLabel3" hidden>3rd Skill</label></td>
+                    <td><input type="text" id="skill3" onkeyup="FillText()"  hidden> </td>
+                    <td><input type="text" id="skillDescription3" onkeyup="FillText()"  placeholder="Description" hidden></td>  
+                </tr>
+                <tr>
+                    <td style="text-decoration: underline;"><br> <b>About Me</b><br><br></td>
+                </tr> 
+                <tr>
+                    <td>Description : </td>
+                    <td><textarea  onkeyup="FillText()"  id="aboutMeDescription" cols="20" rows="5"></textarea></td>
+                </tr> 
+                <tr>
+                    <td style="text-decoration: underline;"><br> <b>Work Experience</b><br><br></td>
+                </tr> 
+                <tr>
+                    <td>Description : </td>
+                    <td><textarea  onkeyup="FillText()"  id="experienceDescription" cols="20" rows="5"></textarea></td>
+                </tr>
+            </table><br><br>
+            <!-- <input type="submit" value="Apply" onclick="FillText()"> -->
+        </div>  
+        <div  class="appearance" style=" margin-left: 1px; padding: 5px; width: 580px; height: 1480px; background-color: rgb(209, 209, 209); border: black 1px solid; border-radius: 0 50px 50px 0;">
+            <h2 style="text-align: center;">Appearance</h2>
+            <hr> 
+            <table>
+                <tr>
+                    <td style="text-decoration: underline;"><br> <b>Colors</b><br></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><label for="backgroundColor" >Background Color : </label></td>
+                    <td><input type="color" id="backgroundColor" value="#dd2e2e" onblur="FillAppearance()"></td>
+                </tr>
+                <tr>
+                    <td><label for="leftColumnColor">Left Column Color : </label></td>
+                    <td><input type="color" id="leftColumnColor" value="#ad1a1a" onblur="FillAppearance()"></td>
+                </tr>
+                <tr>
+                    <td><label for="nameBoxColor">Name Box Color : </label></td>
+                    <td><input type="color" id="nameBoxColor" value="#383838" onblur="FillAppearance()"></td>
+                </tr>
+                <tr>
+                    <td><label for="nameBoxTextColor">Name Box Text Color : </label></td>
+                    <td><input type="color" id="nameBoxTextColor" value="#ffffff" onblur="FillAppearance()"></td>
+                </tr>
+                <tr>
+                    <td style="text-decoration: underline;"><br> <b>Font</b><br></td>
+                </tr>
+                <tr>
+                    <td><label for="">Font : </label></td>
+                    <td>
+                        <select name="font" id="font" onchange="FillAppearance()">
+                            <option value="select">Select</option>
+                            <option value="font1">Times New Roman</option>
+                            <option value="font2">Courier New</option>
+                            <option value="font3">Lucida Handwriting</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-decoration: underline;"><br> <b>Photo</b><br></td>
+                </tr>
+                <tr>
+                    <td><label for="">Photo Frame Shape :  </label></td>
+                    <td>
+                        <select name="photoShape" id="photoShape" onchange="FillAppearance()">
+                            <option value="select">Select</option>
+                            <option value="photoShape1">Square</option>
+                            <option value="photoShape2">Oval</option>
+                            <option value="photoShape3">Round</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-decoration: underline;"><br> <b>Line Under Title</b><br></td>
+                </tr>
+                <tr>
+                    <td><label for="lineColor">Line Color : </label></td>
+                    <td><input type="color" id="lineColor" onblur="FillAppearance()"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Line Style :  </label></td>
+                    <td>
+                        <select name="lineStyle" id="lineStyle"  onchange="FillAppearance()">
+                            <option value="select">Select</option>
+                            <option value="lineStyle1">Dotted</option>
+                            <option value="lineStyle2">Dashed</option>
+                            <option value="lineStyle3">Solid</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+        </div> 
+        <div class="resume" id="resume" style="margin-left: 10px; width: 1000px; height: 1490px; background-color: rgb(221, 46, 46); border: black 1px solid;">
+            <div class="leftColumn" id="leftColumn">
+                <div class="photo" id="photo">
+                    <div class="photoText"> PHOTO </div>
+                </div>
+                <div class="box">
+                    <div class="title" id="contactTitle"> CONTACT </div>
+                    <div class="content">
+                        <ul>
+                            <li><div class="phone" id="phone">{ Phone }</div></li>
+                            <li><div class="email" id="email">{ Email }</div></li>
+                            <li><div class="address" id="address">{ Address }</div></li>
+                            <li><div class="website" id="website">{ Website }</div></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="title" id="educationTitle"> EDUCATION </div>
+                    <div class="content">
+                        <label id="educationText" >{ DESCRIPTION }</label><br>
+                        <ul >
+                            <li hidden id="resumeSchoolLi1"><label id="resumeSchool1"></label>
+                                <ul>
+                                    <li><label id="resumeSchoolDescription1"></label></li>
+                                </ul>
+                            </li>
+                            <li hidden id="resumeSchoolLi2"><label id="resumeSchool2"></label>
+                                <ul>
+                                    <li><label id="resumeSchoolDescription2"></label></li>
+                                </ul>
+                            </li>
+                            <li hidden id="resumeSchoolLi3"><label id="resumeSchool3"></label>
+                                <ul>
+                                    <li><label id="resumeSchoolDescription3"></label></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="title" id="skillsTitle"> SKILLS </div>
+                    <div class="content">
+                        <label id="skillText" >{ DESCRIPTION }</label><br>
+                        <ul >
+                            <li hidden id="resumeSkillLi1"><label id="resumeSkill1"></label>
+                                <ul>
+                                    <li><label id="resumeSkillDescription1"></label></li>
+                                </ul>
+                            </li>
+                            <li hidden id="resumeSkillLi2"><label id="resumeSkill2"></label>
+                                <ul>
+                                    <li><label id="resumeSkillDescription2"></label></li>
+                                </ul>
+                            </li>
+                            <li hidden id="resumeSkillLi3"><label id="resumeSkill3"></label>
+                                <ul>
+                                    <li><label id="resumeSkillDescription3"></label></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="rightColumn">
+                <div class="nameBox" id="nameBox">
+                    <div class="name"> <label id="nameBoxName"> { FULL NAME } </label></div>
+                    <div class="line" id="line"></div>
+                    <div class="title"> <label id="nameBoxTitle"> { TITLE } </label></div>
+                </div>
+                <div class="box">
+                    <div class="title" id="aboutMeTitle">ABOUT ME</div>
+                    <div class="content">
+                        <p><label id="resumeAboutMe"> { DESCRIPTION } </label></p>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="title" id="experienceTitle">WORK EXPERIENCE</div>
+                    <div class="content">
+                        <p><label id="resumeExperience"> { DESCRIPTION } </label></p>
+                    </div>
+                </div>
+            </div>
+        </div>  
+   </div>
+</body>
+
+</html>
